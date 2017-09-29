@@ -66,11 +66,13 @@ class Piggy(pigo.Pigo):
 
     def to_the_right(self):
         for x in range(2):
+            self.servo(50)
             self.encR(5)
 
 
     def to_the_left(self):
         for x in range(2):
+            self.servo(130)
             self.encL(5)
 
 
