@@ -83,6 +83,7 @@ class Piggy(pigo.Pigo):
         self.fwd()
         time.sleep(1)
         self.stop()
+        self.servo(50)
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
