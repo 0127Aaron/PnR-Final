@@ -59,7 +59,7 @@ class Piggy(pigo.Pigo):
         ##### WRITE YOUR FIRST PROJECT HERE
         self.to_the_right()
         self.to_the_left()
-     #   self.now_kick()
+        self.now_kick()
         self.cha_cha()
         self.stop()
       #  self.walk_it_by_yourself()
@@ -67,12 +67,12 @@ class Piggy(pigo.Pigo):
     def to_the_right(self):
         for x in range(3):
             self.encR(10)
-            self.encL(5)
+
 
     def to_the_left(self):
         for x in range(3):
             self.encL(10)
-            self.encR(5)
+
 
     def cha_cha(self):
         for x in range(3):
@@ -81,6 +81,8 @@ class Piggy(pigo.Pigo):
             self.encR(-4)
             self.encL(4)
 
+    def now_kick(self):
+        self.fwd(4)
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
         logging.debug("Starting the nav method")
