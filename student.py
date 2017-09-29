@@ -82,7 +82,6 @@ class Piggy(pigo.Pigo):
             self.encL(4)
 
     def now_kick(self):
-        for x in range(4):
         self.fwd()
 
     def nav(self):
