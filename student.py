@@ -77,12 +77,12 @@ class Piggy(pigo.Pigo):
     def cha_cha(self):
         for x in range(6):
             self.encR(4)
-            self.encL(-4)
-            self.encR(-4)
             self.encL(4)
 
     def now_kick(self):
         self.fwd()
+        time.sleep(1)
+        self.stop()
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
