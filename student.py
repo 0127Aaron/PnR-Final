@@ -61,6 +61,7 @@ class Piggy(pigo.Pigo):
         self.to_the_left()
      #   self.now_kick()
         self.cha_cha()
+        self.stop()
       #  self.walk_it_by_yourself()
 
     def to_the_right(self):
@@ -77,6 +78,8 @@ class Piggy(pigo.Pigo):
         for x in range(3):
             self.encR(4)
             self.encL(-4)
+            self.encR(-4)
+            self.encL(4)
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
