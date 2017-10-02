@@ -91,8 +91,10 @@ class Piggy(pigo.Pigo):
 
 
     def cha_cha(self):
-        for x in range(6):
+        for x in range(5):
+            self.servo(63)
             self.encR(4)
+            self.servo(103)
             self.encL(4)
 
     def now_kick(self):
