@@ -76,7 +76,7 @@ class Piggy(pigo.Pigo):
     def head_dancing(self):
         for x in range(7):
             self.servo(39)
-            self.servo(139)
+            self.servo(159)
 
 
     def to_the_right(self):
