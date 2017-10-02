@@ -62,6 +62,7 @@ class Piggy(pigo.Pigo):
         self.to_the_left()
         self.head_fwd()
         self.now_kick()
+        self.head_dancing()
         self.cha_cha()
         self.stop()
 
@@ -73,7 +74,7 @@ class Piggy(pigo.Pigo):
 
 
     def head_dancing(self):
-        for x in range(3):
+        for x in range(7):
             self.servo(39)
             self.servo(139)
 
@@ -92,9 +93,9 @@ class Piggy(pigo.Pigo):
 
     def cha_cha(self):
         for x in range(5):
-            self.servo(69)
-            self.encR(4)
             self.servo(109)
+            self.encR(4)
+            self.servo(69)
             self.encL(4)
 
     def now_kick(self):
