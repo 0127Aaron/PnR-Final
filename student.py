@@ -68,7 +68,7 @@ class Piggy(pigo.Pigo):
       #  self.walk_it_by_yourself()
 
     def head_fwd(self):
-        for x in range(1)
+        for x in range(1):
             self.servo(83)
 
 
