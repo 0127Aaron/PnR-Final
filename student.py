@@ -21,9 +21,9 @@ class Piggy(pigo.Pigo):
         # YOU DECIDE: How close can an object get (cm) before we have to stop?
         self.STOP_DIST = 30
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 250
+        self.LEFT_SPEED = 230
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 250
+        self.RIGHT_SPEED = 230
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -61,17 +61,25 @@ class Piggy(pigo.Pigo):
         self.to_the_left()
         self.now_kick()
         self.cha_cha()
+        self.head_danceing()
         self.stop()
+
       #  self.walk_it_by_yourself()
 
+    def head_dancing(self):
+        for x in range(3):
+            self.servo(33)
+            self.servo(133)
+
+
     def to_the_right(self):
-        for x in range(2):
+        for x in range(4):
             self.servo(50)
             self.encR(5)
 
 
     def to_the_left(self):
-        for x in range(2):
+        for x in range(4):
             self.servo(130)
             self.encL(5)
 
