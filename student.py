@@ -77,6 +77,7 @@ class Piggy(pigo.Pigo):
                 return False
             print("Check #%d" % loop + 1)
             self.encR(8)
+            if self.is_clear():
             print("Safe to dance!!")
             return True
 
