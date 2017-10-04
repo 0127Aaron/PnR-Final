@@ -116,7 +116,7 @@ class Piggy(pigo.Pigo):
 
     def now_kick(self):
         self.fwd()
-        time.sleep(1)
+        time.sleep(.5)
         self.stop()
         self.encB(5)
         self.servo(50)
