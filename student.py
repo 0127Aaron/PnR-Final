@@ -73,8 +73,11 @@ class Piggy(pigo.Pigo):
         self.servo(self.MIDPOINT)  ##look straight ahead
         for x in range(4):
             if self.dist() < self.SAFE_STOP_DIST:
+                print("NOt Going to dance")
                 return False
+            print("Check #%d" % loop + 1)
             self.encR(8)
+            print("Safe to dance!!")
             return True
 
     def head_fwd(self):
