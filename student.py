@@ -68,12 +68,12 @@ class Piggy(pigo.Pigo):
             self.cha_cha()
             self.stop()
 
-      #  self.walk_it_by_yourself()
+        #  self.walk_it_by_yourself()
     def safety_check(self):
         self.servo(self.MIDPOINT)  ##look straight ahead
         for x in range(4):
-            if self.dist() < self.SAFE_STOP_DIST:
-                print("NOt Going to dance")
+            if not self.is_clear():
+                print("Not going to dance")
                 return False
             print("Check #%d" % loop + 1)
             self.encR(8)
