@@ -75,7 +75,7 @@ class Piggy(pigo.Pigo):
             if not self.is_clear():
                 print("Not going to dance")
                 return False
-            print("Check #%d" % loop + 1)
+            print("Check #%d" % (x + 1))
             self.encR(8)
             if self.is_clear():
                 print("Safe to dance!!")
@@ -85,12 +85,10 @@ class Piggy(pigo.Pigo):
         for x in range(1):
             self.servo(89)
 
-
     def head_dancing(self):
         for x in range(7):
             self.servo(29)
             self.servo(139)
-
 
     def to_the_right(self):
         for x in range(4):
