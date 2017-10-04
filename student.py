@@ -80,7 +80,8 @@ class Piggy(pigo.Pigo):
         for x in range(4):
             if not self.is_clear():
                 print("Not going to dance")
-                return False
+                self.encL(8)
+                return self.safety_check()
             print("Check #%d" % (x + 1))
             self.encR(8)
             print("Safe to dance!!")
