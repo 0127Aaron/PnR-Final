@@ -64,6 +64,8 @@ class Piggy(pigo.Pigo):
             self.head_dancing()
             self.to_the_left()
             self.head_dancing()
+            self.head_fwd()
+            self.now_kick()
             self.to_the_right()
             self.to_the_right()
             self.to_the_left()
