@@ -87,40 +87,40 @@ class Piggy(pigo.Pigo):
                 return self.safety_check()  # do the safety check again
             print("Check #%d" % (x + 1))
             print("Safe to dance!!")
-            return True
+            return True      ## countinue the dance methond
 
-    def head_fwd(self):   #make the sensor forward
+    def head_fwd(self):     # make the sensor forward
         for x in range(1):
             self.servo(89)
 
-    def head_dancing(self):
+    def head_dancing(self):     # the sensor turns right and turns left for 3 times
         for x in range(3):
             self.servo(49)
             self.servo(129)
 
-    def to_the_right(self):
+    def to_the_right(self):     # the sensor turns left and the robot turns right
         for x in range(1):
             self.servo(50)
             self.encR(16)
 
-    def to_the_left(self):
+    def to_the_left(self):      # the sensor turns right and the robot turns left
         for x in range(1):
             self.servo(130)
             self.encL(16)
 
-    def cha_cha(self):
+    def cha_cha(self):  # robot turns right with sensor turning left,
+                        # and then robot turns left with sensor turning right.
         for x in range(5):
             self.servo(109)
             self.encR(4)
             self.servo(69)
             self.encL(4)
 
-    def now_kick(self):
+    def now_kick(self):     # Robot goes forward for 0.5s and then goes back
         self.fwd()
         time.sleep(.5)
         self.stop()
         self.encB(5)
-        self.servo(50)
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
