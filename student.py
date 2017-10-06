@@ -59,7 +59,7 @@ class Piggy(pigo.Pigo):
         print("\n---- LET'S DANCE ----\n")
         ##### WRITE YOUR FIRST PROJECT HERE
        # if self.safety_check():
-            self.head_dancing()
+        self.head_dancing()
           #  self.to_the_right()
          #   self.head_dancing()
          #   self.to_the_left()
@@ -72,7 +72,7 @@ class Piggy(pigo.Pigo):
         #    self.to_the_left()
          #   self.head_fwd()
           #  self.now_kick()
-            self.head_dancing()
+        self.head_dancing()
            ## self.cha_cha()
            # self.stop()
 
