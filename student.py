@@ -22,9 +22,9 @@ class Piggy(pigo.Pigo):
         self.SAFE_STOP_DIST = 30
         self.HARD_STOP_DIST = 15
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.LEFT_SPEED = 180
+        self.LEFT_SPEED = 150
         # YOU DECIDE: What left motor power helps straighten your fwd()?
-        self.RIGHT_SPEED = 180
+        self.RIGHT_SPEED = 150
         # This one isn't capitalized because it changes during runtime, the others don't
         self.turn_track = 0
         # Our scan list! The index will be the degree and it will store distance
@@ -86,9 +86,9 @@ class Piggy(pigo.Pigo):
                 self.encL(8)    # turn left
                 return self.safety_check()  # do the safety check again
             self.encR(8)
-            print("Check #%d" % (x + 1))
-            print("Safe to dance!!")
-            return True      ## countinue the dance methond
+        print("Check #%d" % (x + 1))
+        print("Safe to dance!!")
+        return True      ## countinue the dance methond
 
     def head_fwd(self):     # make the sensor forward
         for x in range(1):
