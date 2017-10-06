@@ -85,6 +85,7 @@ class Piggy(pigo.Pigo):
                 self.encB(3)    # it is not safe, so go back
                 self.encL(8)    # turn left
                 return self.safety_check()  # do the safety check again
+            self.encR(8)
             print("Check #%d" % (x + 1))
             print("Safe to dance!!")
             return True      ## countinue the dance methond
