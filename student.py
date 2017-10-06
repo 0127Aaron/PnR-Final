@@ -98,12 +98,12 @@ class Piggy(pigo.Pigo):
             self.servo(49)
             self.servo(129)
 
-    def to_the_right(self):     # the sensor turns left and the robot turns right
+    def to_the_right(self):     # the sensor turns right and the robot turns right
         for x in range(1):
             self.servo(50)
             self.encR(16)
 
-    def to_the_left(self):      # the sensor turns right and the robot turns left
+    def to_the_left(self):      # the sensor turns left and the robot turns left
         for x in range(1):
             self.servo(130)
             self.encL(16)
