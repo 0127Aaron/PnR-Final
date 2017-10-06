@@ -79,18 +79,17 @@ class Piggy(pigo.Pigo):
         #  self.walk_it_by_yourself()
     def safety_check(self):
         self.servo(self.MIDPOINT)  ##look straight ahead
-        for x in range(4):
+        for x in range(4):     ##rotate the sensor in 4 different angles
             if not self.is_clear():
                 print("Not going to dance")
-                self.encB(3)
-                self.encL(8)
-                return self.safety_check()
+                self.encB(3)    # it is not safe, so go back
+                self.encL(8)    # turn left
+                return self.safety_check()  # do the safety check again
             print("Check #%d" % (x + 1))
-            self.encR(8)
             print("Safe to dance!!")
             return True
 
-    def head_fwd(self):
+    def head_fwd(self):   #make the sensor forward
         for x in range(1):
             self.servo(89)
 
@@ -104,12 +103,10 @@ class Piggy(pigo.Pigo):
             self.servo(50)
             self.encR(16)
 
-
     def to_the_left(self):
         for x in range(1):
             self.servo(130)
             self.encL(16)
-
 
     def cha_cha(self):
         for x in range(5):
@@ -124,7 +121,6 @@ class Piggy(pigo.Pigo):
         self.stop()
         self.encB(5)
         self.servo(50)
-
 
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
