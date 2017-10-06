@@ -95,9 +95,9 @@ class Piggy(pigo.Pigo):
             self.servo(89)
 
     def head_dancing(self):
-        for x in range(5):
-            self.servo(19)
-            self.servo(159)
+        for x in range(3):
+            self.servo(49)
+            self.servo(129)
 
     def to_the_right(self):
         for x in range(1):

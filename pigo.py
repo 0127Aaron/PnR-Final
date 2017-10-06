@@ -141,7 +141,7 @@ class Pigo(object):
         bwd()
         time.sleep(1 * (enc / 18)+.4)
 
-    def servo(self, val):
+    def servo(self, val: object) -> object:
         """moves the head of the robot to the given degree within 60 from midpoint"""
         if val > self.MIDPOINT-60 and val < self.MIDPOINT+60:
             print('Moving servo to ' + str(val) + 'deg')
