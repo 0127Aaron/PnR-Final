@@ -135,10 +135,6 @@ class Piggy(pigo.Pigo):
                 self.cruise()
             else:
                 print("Here is not safe enough, and turn right")
-                self.set_speed(100, 100)
-                self.fwd()
-                while self.dist() < self.SAFE_STOP_DIST:
-                    time.sleep(.1)
                 self.encR(8)
 
     def cruise(self):   # drive straight while path is clear
