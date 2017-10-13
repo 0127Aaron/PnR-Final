@@ -137,6 +137,7 @@ class Piggy(pigo.Pigo):
                 print("Here is not safe enough, and turn right")
                 self.set_speed(100, 100)
                 self.fwd()
+                while self.dist() < self.SAFE_STOP_DIST:
                     time.sleep(.1)
                 self.encR(8)
 
