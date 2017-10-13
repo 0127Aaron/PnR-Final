@@ -135,7 +135,7 @@ class Piggy(pigo.Pigo):
                 self.cruise()
             else:
                 print("Here is not safe enough, and turn right")
-                self.encR(8)
+                self.encR(3)
 
     def cruise(self):   # drive straight while path is clear
         self.fwd()
