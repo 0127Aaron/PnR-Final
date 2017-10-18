@@ -42,6 +42,7 @@ class Piggy(pigo.Pigo):
         menu = {"n": ("Navigate forward", self.nav),
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
+                "o": ("Obstacle count", self.obstacle_count),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit_now)
                 }
@@ -89,6 +90,20 @@ class Piggy(pigo.Pigo):
             print("Check #%d" % (x + 1))
         print("Safe to dance!!")
         return True      # continue the dance method
+
+    def obstacle_count(self):
+        """scans and estimates the number of obstacles within sight"""
+        self.wide_scan()
+        found_something = False
+        counter = 0
+        for distance in self.scan:
+            if distance and distance < 200 and not found_something:
+                found_something = True
+                print("Object #%d found, I think" % counter)
+            if distance and distance > 200 and found_something:
+                found_something = False
+                counter += 1
+        print("\n----I SEE %d OBJECT----\n" % counter)
 
     def head_fwd(self):     # make the sensor forward
         for x in range(1):
