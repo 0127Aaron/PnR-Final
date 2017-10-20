@@ -96,7 +96,7 @@ class Piggy(pigo.Pigo):
         count = 0
         for x in range(4):
             count += self.obstacle_count()
-            self.encR(6)
+            self.encR(7)
         print("\n----There are totally %d objects----\n" % count)
 
     def obstacle_count(self):
@@ -105,7 +105,7 @@ class Piggy(pigo.Pigo):
         found_something = False
         counter = 0
         for distance in self.scan:
-            if distance and distance < 70 and not found_something:
+            if distance and distance < 80 and not found_something:
                 found_something = True
                 counter += 1
                 print("Object #%d found, I think" % counter)
