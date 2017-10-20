@@ -96,8 +96,8 @@ class Piggy(pigo.Pigo):
         count = 0
         for x in range(4):
             self.obstacle_count()
-            count += self. obstacle_count()
-            self.encR(16)
+            count += self.obstacle_count()
+            self.encR(8)
         print("\n----There are totally %d objects----\n" % count)
 
     def obstacle_count(self):
