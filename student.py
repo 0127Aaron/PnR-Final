@@ -43,6 +43,7 @@ class Piggy(pigo.Pigo):
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
                 "o": ("Obstacle count", self.obstacle_count),
+                "co": ("Circle count", self.circle_counting),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit_now)
                 }
@@ -90,6 +91,12 @@ class Piggy(pigo.Pigo):
             print("Check #%d" % (x + 1))
         print("Safe to dance!!")
         return True      # continue the dance method
+
+    def circle_counting(self):
+        count = 0
+        for x in range(4):
+            count += self. obstacle_count()
+            self.encR(16)
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
