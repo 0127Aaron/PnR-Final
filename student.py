@@ -95,6 +95,7 @@ class Piggy(pigo.Pigo):
     def circle_counting(self):
         count = 0
         for x in range(4):
+            self.obstacle_count()
             count += self. obstacle_count()
             self.encR(16)
 
