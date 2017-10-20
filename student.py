@@ -93,7 +93,7 @@ class Piggy(pigo.Pigo):
 
     def obstacle_count(self):
         self.set_speed(10, 10)
-        self.encR(30)
+        self.encR(60)
         """scans and estimates the number of obstacles within sight"""
         self.flush_scan()
         found_something = False
