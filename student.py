@@ -98,10 +98,11 @@ class Piggy(pigo.Pigo):
             self.obstacle_count()
             count += self. obstacle_count()
             self.encR(16)
+        print("\n----There are totally %d objects----\n" % count)
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
-        self.wide_scan(2)
+        self.wide_scan(3)
         found_something = False
         counter = 0
         for distance in self.scan:
