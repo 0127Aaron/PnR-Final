@@ -111,9 +111,8 @@ class Piggy(pigo.Pigo):
                 print("Object #%d found, I think" % counter)
             if distance and distance > 70 and found_something:
                 found_something = False
-
-
         print("\n----I SEE %d OBJECT----\n" % counter)
+        return counter
 
     def head_fwd(self):     # make the sensor forward
         for x in range(1):
