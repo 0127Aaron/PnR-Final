@@ -92,10 +92,9 @@ class Piggy(pigo.Pigo):
         return True      # continue the dance method
 
     def obstacle_count(self):
-        self.set_speed(10, 10)
         self.encR(60)
         """scans and estimates the number of obstacles within sight"""
-        self.flush_scan()
+        self.wide_scan()
         found_something = False
         counter = 0
         for distance in self.scan:
