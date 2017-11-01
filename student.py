@@ -147,6 +147,39 @@ class Piggy(pigo.Pigo):
         self.stop()
         self.encB(5)
 
+    def scan_forward(self, count=2):
+        """moves servo 120 degrees and fills scan array, default count=2"""
+        self.flush_scan()
+        for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, count):
+            servo(x)
+            time.sleep(.1)
+            scan1 = us_dist(15)
+            time.sleep(.1)
+            # double check the distance
+            scan2 = us_dist(15)
+            # if I found a different distance the second time....
+            if abs(scan1 - scan2) > 2:
+                scan3 = us_dist(15)
+                time.sleep(.1)
+                # take another scan and average the three together
+                scan1 = (scan1 + scan2 + scan3) / 3
+            self.scan[x] = scan1
+            print("Degree: " + str(x) + ", distance: " + str(scan1))
+            time.sleep(.01)
+
+    def smart_turn(self):
+        """Then in order to serve nav method, it will print the ang with greatest distance"""
+        ang = 0
+        largest_dist = 0
+        for index, distance in enumerate(self.scan_forward):
+            if distance > largest_dist:
+                largest_dist = distance
+                ang = Index for largest_dist
+        print(ang)
+        if ang <= self.MIDPOINT:
+            R_turn = ()
+            self. encR(R_turn)
+
 ### Robot find a best way to move forward to reach the goal without meeting obstacles.
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
