@@ -147,19 +147,22 @@ class Piggy(pigo.Pigo):
         self.stop()
         self.encB(5)
 
+### Robot find a best way to move forward to reach the goal without meeting obstacles.
     def nav(self):
         """auto pilots and attempts to maintain original heading"""
         logging.debug("Starting the nav method")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
+        ###formula: turning value = 7(angle with greatest distance - midpoint)/ 90
         while True:
+            self.scan_forward()
             if self.is_clear():
                 print("Ready to go!")
                 self.cruise()
             else:
                 print("Here is not safe enough, and turn right")
-                self.encR(3)    # turn right
+                self.encR(7)    # turn right
 
     def cruise(self):   # drive straight while path is clear
         self.fwd()  # going forward fot 0.1s and then check again

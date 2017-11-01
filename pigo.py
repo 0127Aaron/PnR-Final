@@ -184,6 +184,26 @@ class Pigo(object):
             print("Degree: "+str(x)+", distance: "+str(scan1))
             time.sleep(.01)
 
+    def scan_forward(self, count=2):
+        """moves servo 120 degrees and fills scan array, default count=2"""
+        self.flush_scan()
+        for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, count):
+            servo(x)
+            time.sleep(.1)
+            scan1 = us_dist(15)
+            time.sleep(.1)
+            # double check the distance
+            scan2 = us_dist(15)
+            # if I found a different distance the second time....
+            if abs(scan1 - scan2) > 2:
+                scan3 = us_dist(15)
+                time.sleep(.1)
+                # take another scan and average the three together
+                scan1 = (scan1 + scan2 + scan3) / 3
+            self.scan[x] = scan1
+            print("Degree: " + str(x) + ", distance: " + str(scan1))
+            time.sleep(.01)
+
     def is_clear(self):
         """does a 3-point scan around the midpoint, returns false if a test fails"""
         print("Running the is_clear method.")
