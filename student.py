@@ -185,7 +185,7 @@ class Piggy(pigo.Pigo):
         self.encR(5)
         self.restore_head()
 
-    def smart_turn(self):
+    """def smart_turn(self):
         """Then in order to serve nav method, it will print the ang with greatest distance"""
         ang = 0
         largest_dist = 0
@@ -196,7 +196,7 @@ class Piggy(pigo.Pigo):
         print(ang)
         if ang <= self.MIDPOINT:
             R_turn = ()
-            self. encR(R_turn)
+            self. encR(R_turn)"""
 
 ### Robot find a best way to move forward to reach the goal without meeting obstacles.
     def nav(self):
