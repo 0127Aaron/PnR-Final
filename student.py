@@ -151,7 +151,7 @@ class Piggy(pigo.Pigo):
     def scan_forward(self, count=2):
         """moves servo 120 degrees and fills scan array, default count=2"""
         self.flush_scan()
-        for x in range(self.MIDPOINT - 30, self.MIDPOINT + 30, count):
+        for x in range(self.MIDPOINT - 45, self.MIDPOINT + 45, count):
             servo(x)
             time.sleep(.1)
             scan1 = us_dist(15)
@@ -194,7 +194,7 @@ class Piggy(pigo.Pigo):
                 largest_dist = distance
                 ang = Index for largest_dist
         print(ang)
-        turn = 7 * abs(ang - self.MIDPOINT) / 90
+        turn = 7 * abs(ang - self.MIDPOINT) / 90   ##calculate how much it should turn to the valid direction.
         if ang <= self.MIDPOINT:
             self. encR(turn)
         if ang > self.MIDPOINT:
@@ -215,7 +215,7 @@ class Piggy(pigo.Pigo):
                 print("Ready to go!")
                 self.fwd()
                 time.sleep(1)
-                if self.dist() > self.SAFE_STOP_DIST:
+                if self.dist() > self.SAFE_STOP_DIST:   ###To make the movement continues more by a simple safe check
                     return self.is_clear()
                 else:
                     return False
