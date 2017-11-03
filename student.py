@@ -185,18 +185,20 @@ class Piggy(pigo.Pigo):
         self.encR(5)
         self.restore_head()
 
-    """def smart_turn(self):"""
+    def smart_turn(self):
         """Then in order to serve nav method, it will print the ang with greatest distance"""
-       """ ang = 0
+        ang = 0
         largest_dist = 0
         for index, distance in enumerate(self.scan_forward):
             if distance > largest_dist:
                 largest_dist = distance
                 ang = Index for largest_dist
         print(ang)
+        turn = 7 * abs(ang - self.MIDPOINT) / 90
         if ang <= self.MIDPOINT:
-            R_turn = ()
-            self. encR(R_turn)"""
+            self. encR(turn)
+        if ang > self.MIDPOINT:
+            self.encL(turn)
 
 ### Robot find a best way to move forward to reach the goal without meeting obstacles.
     def nav(self):
@@ -208,12 +210,19 @@ class Piggy(pigo.Pigo):
         ###formula: turning value = 7(angle with greatest distance - midpoint)/ 90
         while True:
             self.scan_forward()
+            self.smart_turn()
             if self.is_clear():
                 print("Ready to go!")
-                self.cruise()
+                self.fwd()
+                time.sleep(1)
+                if self.dist() > self.SAFE_STOP_DIST:
+                    return self.is_clear()
+                else:
+                    return False
             else:
-                print("Here is not safe enough, and turn right")
-                self.encR(7)    # turn right
+                print("Here is not safe enough, and turn back")
+                self.encB(5)    # turn back
+                self.restore_head()
 
     def cruise(self):   # drive straight while path is clear
         self.fwd()  # going forward fot 0.1s and then check again
