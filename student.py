@@ -189,11 +189,12 @@ class Piggy(pigo.Pigo):
         """Then in order to serve nav method, it will print the ang with greatest distance"""
         ang = 0
         largest_dist = 0
-        for index, distance in enumerate(self.scan_forward):
+        self.wide_scan()
+        for index, distance in enumerate(self.scan):
             if distance > largest_dist:
                 largest_dist = distance
-                ang = Index for largest_dist
-        print(ang)
+                ang = index
+        print("I think the best angle is %d\n" % ang)
         turn = 7 * abs(ang - self.MIDPOINT) / 90   ##calculate how much it should turn to the valid direction.
         if ang <= self.MIDPOINT:
             self. encR(turn)
