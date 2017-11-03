@@ -149,7 +149,7 @@ class Piggy(pigo.Pigo):
         self.encB(5)
 
     def scan_forward(self, count=2):
-        """moves servo 120 degrees and fills scan array, default count=2"""
+        """moves servo 90 degrees and fills scan array, default count=2"""
         self.flush_scan()
         for x in range(self.MIDPOINT - 45, self.MIDPOINT + 45, count):
             servo(x)
