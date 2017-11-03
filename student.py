@@ -45,6 +45,7 @@ class Piggy(pigo.Pigo):
                 "o": ("Obstacle count", self.obstacle_count),
                 "co": ("Circle count", self.circle_counting),
                 "s": ("Check status", self.status),
+                "t": ("Test restore heading", self.test_restore_heading()),
                 "q": ("Quit", quit_now)
                 }
         # loop and print the menu...
@@ -166,6 +167,23 @@ class Piggy(pigo.Pigo):
             self.scan[x] = scan1
             print("Degree: " + str(x) + ", distance: " + str(scan1))
             time.sleep(.01)
+
+    def restore_head(self):
+        """
+        Uses self.turn_track to reorient to original heading
+        """
+        print("Restoring heading!")
+        if self.turn_track > 0:
+            self.encL(abs(self.turn_track))
+        elif self.turn_track < 0:
+            self.encR(abs(self.turn_track))
+
+    def test_restore_heading(self):
+        self.encR(5)
+        self.encL(15)
+        self.encR(20)
+        self.encR(5)
+        self.restore_head()
 
     def smart_turn(self):
         """Then in order to serve nav method, it will print the ang with greatest distance"""
