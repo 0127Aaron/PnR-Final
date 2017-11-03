@@ -185,9 +185,9 @@ class Piggy(pigo.Pigo):
         self.encR(5)
         self.restore_head()
 
-    """def smart_turn(self):
+    """def smart_turn(self):"""
         """Then in order to serve nav method, it will print the ang with greatest distance"""
-        ang = 0
+       """ ang = 0
         largest_dist = 0
         for index, distance in enumerate(self.scan_forward):
             if distance > largest_dist:
