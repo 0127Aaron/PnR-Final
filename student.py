@@ -45,7 +45,7 @@ class Piggy(pigo.Pigo):
                 "o": ("Obstacle count", self.obstacle_count),
                 "co": ("Circle count", self.circle_counting),
                 "s": ("Check status", self.status),
-                "t": ("Test restore heading", self.test_restore_heading()),
+                "t": ("Test restore heading", self.test_restore_heading),
                 "q": ("Quit", quit_now)
                 }
         # loop and print the menu...
