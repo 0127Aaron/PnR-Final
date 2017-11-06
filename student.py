@@ -31,9 +31,10 @@ class Piggy(pigo.Pigo):
         self.scan = [None] * 180
         self.set_speed(self.LEFT_SPEED, self.RIGHT_SPEED)
         # let's use an event-driven model, make a handler of sorts to listen for "events"
-        while True:
-            self.stop()
-            self.menu()
+        if __name__ == "__main__":  # this makes sure the parent handler doesn't take over student's
+            while True:
+                self.stop()
+                self.menu()
 
     def menu(self):
         """Displays menu dictionary, takes key-input and calls method"""
