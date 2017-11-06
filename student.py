@@ -211,7 +211,6 @@ class Piggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         ###formula: turning value = 7(angle with greatest distance - midpoint)/ 90
         while True:
-            self.scan_forward()
             self.smart_turn()
             if self.is_clear():
                 print("Ready to go!")
