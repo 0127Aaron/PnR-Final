@@ -116,7 +116,7 @@ class Pigo(object):
         print('Moving '+str((enc/18))+' rotation(s) forward')
         enc_tgt(m1, m2, enc)
         fwd()
-        time.sleep(1 * (enc / 18)+.4)
+        time.sleep(1 * (enc / 15)+.5)
 
     def encR(self, enc, m1=1, m2=1):
         """sets encoder, right_rot, += turn_track, (18 = 1 wheel rot)"""
@@ -124,7 +124,7 @@ class Pigo(object):
         enc_tgt(m1, m2, enc)
         right_rot()
         self.turn_track += enc
-        time.sleep(1 * (enc / 18)+.4)
+        time.sleep(1 * (enc / 15)+.5)
 
     def encL(self, enc, m1=1, m2=1):
         """sets encoder, right_rot, -= turn_track, (18 = 1 wheel rot)"""
@@ -132,7 +132,7 @@ class Pigo(object):
         enc_tgt(m1, m2, enc)
         left_rot()
         self.turn_track -= enc
-        time.sleep(1*(enc/18)+.4)
+        time.sleep(1*(enc/15)+.5)
 
     def encB(self, enc, m1=1, m2=1):
         """sets an encoder, moves back, sleeps, (18 = 1 wheel rot)"""
