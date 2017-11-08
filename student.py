@@ -212,7 +212,7 @@ class Piggy(pigo.Pigo):
         ###formula: turning value = 7(angle with greatest distance - midpoint)/ 90
         while True:
             self.smart_turn()
-            if self.is_clear():
+            if self.dist() > self.SAFE_STOP_DIST():
                 print("Ready to go!")
                 self.fwd()
                 time.sleep(1)
@@ -221,7 +221,7 @@ class Piggy(pigo.Pigo):
                 else:
                     self.encB(5)
                     self.restore_head()
-                    return self.nav()
+                    return self.nav
             else:
                 print("Here is not safe enough, and turn back")
                 self.encB(5)    # turn back
