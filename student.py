@@ -217,13 +217,10 @@ class Piggy(pigo.Pigo):
             if self.is_clear:
                 print("Ready to go!")
                 self.fwd()
-                time.sleep(1)
-                if self.dist() > self.SAFE_STOP_DIST:   ###To make the movement continues more by a simple safe check
-                    return self.is_clear
-                else:
+                if not self.is_clear():   ###To make the movement continues more by a simple safe check
                     self.encB(5)
                     self.restore_head()
-                    return self.nav
+                    continue
             else:
                 print("Here is not safe enough, and turn back")
                 self.encB(5)    # turn back
