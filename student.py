@@ -231,7 +231,7 @@ class Piggy(pigo.Pigo):
                 print("Here is not safe enough, and turn back")
                 self.encB(5)    # turn back
                 self.restore_head()
-                
+
     def smooth_turn(self):
         self.right_rot()
         start = datetime.datetime.utconw()
@@ -240,7 +240,7 @@ class Piggy(pigo.Pigo):
                 self.stop()
             elif datetime.datetime.utcnow() - start > datetime.timedetlta(seconds):
                     self.stop()
-                time.sleep(.2)
+                    time.sleep(.2)
 
     def cruise(self):   # drive straight while path is clear
         self.fwd()  # going forward fot 0.1s and then check again
