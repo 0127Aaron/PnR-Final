@@ -217,13 +217,13 @@ class Piggy(pigo.Pigo):
         print("It looks you %d seconds to run this"% difference)"""
         while True:
             self.smart_turn()
-            if self.dist() > self.SAFE_STOP_DIST():
+            if self.is_clear:
                 print("Ready to go!")
                 self.fwd()
                 time.sleep(1)
                 if self.dist() > self.SAFE_STOP_DIST:   ###To make the movement continues more by a simple safe check
-                    return self.fwd()
-                else:
+                    return self.is_clear
+                elif:
                     self.encB(5)
                     self.restore_head()
                     return self.nav
