@@ -222,7 +222,7 @@ class Piggy(pigo.Pigo):
                 self.fwd()
                 time.sleep(1)
                 if self.dist() > self.SAFE_STOP_DIST:   ###To make the movement continues more by a simple safe check
-                    return self.is_clear()
+                    return self.fwd()
                 else:
                     self.encB(5)
                     self.restore_head()
