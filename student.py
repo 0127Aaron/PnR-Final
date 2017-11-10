@@ -216,9 +216,9 @@ class Piggy(pigo.Pigo):
             self.smart_turn()
             if self.is_clear:
                 print("Ready to go!")
+                self.head_fwd()
                 self.fwd()
-
-                if self.dist() < self.SAFE_STOP_DIST:###To make the movement continues more by a simple safe check
+                if self.dist < self.SAFE_STOP_DIST:###To make the movement continues more by a simple safe check
                     self.encB(5)
                     self.restore_head()
                     continue
