@@ -212,9 +212,9 @@ class Piggy(pigo.Pigo):
         print("-------- [ Press CTRL + C to stop me ] --------\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         ###formula: turning value = 7(angle with greatest distance - midpoint)/ 90
-        right_now = datetime.datetime.utconw()
+     """  right_now = datetime.datetime.utconw()
         difference = (right_now - self.start_time).seconds
-        print("It looks you %d seconds to run this"% difference)
+        print("It looks you %d seconds to run this"% difference)"""
         while True:
             self.smart_turn()
             if self.dist() > self.SAFE_STOP_DIST():
