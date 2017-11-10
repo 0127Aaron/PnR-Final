@@ -200,7 +200,7 @@ class Pigo(object):
             print("Degree: " + str(x) + ", distance: " + str(scan1))
             if scan1 < self.SAFE_STOP_DIST:
                 print("Doesn't look clear to me")
-                return False
+
         return True
 
     def choose_path(self):
