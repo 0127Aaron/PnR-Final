@@ -219,7 +219,6 @@ class Piggy(pigo.Pigo):
                 print("Ready to go!")
                 self.fwd()
                 if not self.dist() < self.SAFE_STOP_DIST:###To make the movement continues more by a simple safe check
-                    self.stop()
                     self.encB(5)
                     self.restore_head()
                     continue
