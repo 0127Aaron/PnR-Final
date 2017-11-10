@@ -217,7 +217,8 @@ class Piggy(pigo.Pigo):
             if self.is_clear:
                 print("Ready to go!")
                 self.fwd()
-                if not self.is_clear():   ###To make the movement continues more by a simple safe check
+                if not self.is_clear():###To make the movement continues more by a simple safe check
+                    self.stop()
                     self.encB(5)
                     self.restore_head()
                     continue
