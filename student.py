@@ -217,7 +217,8 @@ class Piggy(pigo.Pigo):
             if self.is_clear:
                 print("Ready to go!")
                 self.head_fwd()
-                self.cruise()
+                self.fwd()
+                time.sleep(1)
 
 
 
