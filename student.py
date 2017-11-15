@@ -200,8 +200,10 @@ class Piggy(pigo.Pigo):
         print("I think the best angle is %d\n" % ang)
         turn = int(7 * abs(ang - self.MIDPOINT) / 90)   ##calculate how much it should turn to the valid direction.
         if ang <= self.MIDPOINT:
+            print("Turn right for %d\n" % turn)
             self. encR(turn)
         if ang > self.MIDPOINT:
+            print("Turn left for %d\n" % turn)
             self.encL(turn)
 
 ### Robot find a best way to move forward to reach the goal without meeting obstacles.
@@ -221,7 +223,7 @@ class Piggy(pigo.Pigo):
             else:
                 print("Here is not safe enough, and turn back")
                 self.encB(5)    # turn back
-                self.restore_head()
+                self.restore_head()  # turn to the original direction
 
     def smooth_turn(self):
         self.right_rot()
@@ -233,7 +235,7 @@ class Piggy(pigo.Pigo):
                     self.stop()
                     time.sleep(.2)
 
-    def cruise(self):   # drive straight while path is clear
+    def cruise(self):   # drive straight while path is clear or it will continue the method
         while self.dist() > self.SAFE_STOP_DIST:
                 self.fwd()
                 time.sleep(.1)
