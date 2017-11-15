@@ -242,7 +242,7 @@ class Piggy(pigo.Pigo):
                 self.fwd()
                 time.sleep(.1)
             else:
-                return self.nav()
+                return False
 
 
 
