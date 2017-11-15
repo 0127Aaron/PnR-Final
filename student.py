@@ -218,7 +218,7 @@ class Piggy(pigo.Pigo):
                 print("Ready to go!")
                 self.head_fwd()
                 self.cruise()
-                continue
+
 
 
             else:
@@ -237,9 +237,13 @@ class Piggy(pigo.Pigo):
                     time.sleep(.2)
 
     def cruise(self):   # drive straight while path is clear
-        self.fwd()  # going forward fot 0.1s and then check again
-        while self.dist() > self.SAFE_STOP_DIST:
-            time.sleep(.1)
+        while True:
+            if self.dist() > self.SAFE_STOP_DIST:
+                self.fwd()
+                time.sleep(.1)
+            else:
+                return self.nav()
+
 
 
 
