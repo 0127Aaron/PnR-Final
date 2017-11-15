@@ -217,11 +217,9 @@ class Piggy(pigo.Pigo):
             if self.is_clear:
                 print("Ready to go!")
                 self.head_fwd()
-                self.fwd()
-                if self.dist <= self.SAFE_STOP_DIST:###To make the movement continues more by a simple safe check
-                    self.encB(5)
-                    self.restore_head()
-                    return self.nav()
+                self.cruise()
+                continue
+
 
             else:
                 print("Here is not safe enough, and turn back")
@@ -242,6 +240,7 @@ class Piggy(pigo.Pigo):
         self.fwd()  # going forward fot 0.1s and then check again
         while self.dist() > self.SAFE_STOP_DIST:
             time.sleep(.1)
+
 
 
 ####################################################
