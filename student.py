@@ -241,8 +241,8 @@ class Piggy(pigo.Pigo):
                 time.sleep(.1)
         else:
             print("Here is not safe enough, and turn back")
-            self.encB(12)  # turn back
             self.restore_head()  # turn to the original direction
+            self.encB(15)  # turn back
             return False
 
 
