@@ -222,7 +222,7 @@ class Piggy(pigo.Pigo):
                 self.cruise()
             else:
                 print("Here is not safe enough, and turn back")
-                self.encB(12)    # turn back
+                self.encB(16)    # turn back
                 self.restore_head()  # turn to the original direction
 
     def smooth_turn(self):
