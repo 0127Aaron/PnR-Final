@@ -184,8 +184,11 @@ class Piggy(pigo.Pigo):
 
     def test_restore_heading(self):
         self.encR(5)
+        time.sleep(.5)
         self.encL(15)
+        time.sleep(2)
         self.encR(20)
+        time.sleep(2)
         self.encR(5)
         self.restore_head()
 
