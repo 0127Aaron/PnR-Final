@@ -105,6 +105,7 @@ class Piggy(pigo.Pigo):
 
     def obstacle_count(self):
         """scans and estimates the number of obstacles within sight"""
+        self.stop()
         self.wide_scan(3)
         found_something = False
         counter = 0
