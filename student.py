@@ -209,6 +209,7 @@ class Piggy(pigo.Pigo):
         if ang > self.MIDPOINT:
             print("Turn left for %d\n" % turn)
             self.encL(turn)
+        time.sleep(1)
 
 ### Robot find a best way to move forward to reach the goal without meeting obstacles.
     def nav(self):
