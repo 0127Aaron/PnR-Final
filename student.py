@@ -208,6 +208,7 @@ class Piggy(pigo.Pigo):
         if ang <= self.MIDPOINT:
             print("Turn right for %d\n" % turn)
             self. encR(turn)
+        time.sleep(1)
         if ang > self.MIDPOINT:
             print("Turn left for %d\n" % turn)
             self.encL(turn)
