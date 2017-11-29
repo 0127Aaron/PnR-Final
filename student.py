@@ -176,11 +176,13 @@ class Piggy(pigo.Pigo):
         """
         Uses self.turn_track to reorient to original heading
         """
+        self.stop()
         print("Restoring heading!")
         if self.turn_track > 0:
             self.encL(abs(self.turn_track))
         elif self.turn_track < 0:
             self.encR(abs(self.turn_track))
+        time.sleep(1)
 
     def test_restore_heading(self):
         self.encR(5)
@@ -221,7 +223,8 @@ class Piggy(pigo.Pigo):
         ###formula: turning value = 7(angle with greatest distance - midpoint)/ 90
         while True:
             self.smart_turn()
-            if self.dist > self.SAFE_STOP_DIST:  ###Robot will go fwd until the distance is unsafe. If it is not safe, it will do else below
+            if self.dist > self.SAFE_STOP_DIST:  ###Robot will go fwd until the
+                #  distance is unsafe. If it is not safe, it will do else below
                 print("Ready to go!")
                 self.head_fwd()
                 self.cruise()
