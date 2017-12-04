@@ -204,7 +204,7 @@ class Piggy(pigo.Pigo):
                 largest_dist = distance
                 ang = index
             elif distance == largest_dist:
-                if abs(distance - 90) < abs(largest_dist - 90):
+                if abs(index - 90) < abs(ang - 90):
                     largest_dist = distance
                     ang = index
 
