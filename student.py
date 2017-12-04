@@ -203,6 +203,11 @@ class Piggy(pigo.Pigo):
             if distance > largest_dist:
                 largest_dist = distance
                 ang = index
+            elif distance == largest_dist:
+                if abs(distance - 90) < abs(largest_dist - 90):
+                    largest_dist = distance
+                    ang = index
+
         print("I think the best angle is %d\n" % ang)
         turn = int(7.2 * abs(ang - self.MIDPOINT) / 90)   ##calculate how much it should turn to the valid direction.
         if ang <= self.MIDPOINT:
