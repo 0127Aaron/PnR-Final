@@ -166,7 +166,7 @@ class Pigo(object):
     def wide_scan(self, count=2):
         """moves servo 120 degrees and fills scan array, default count=2"""
         self.flush_scan()
-        for x in range(self.MIDPOINT-80, self.MIDPOINT+80, count):
+        for x in range(self.MIDPOINT-70, self.MIDPOINT+70, count):
             servo(x)
             time.sleep(.1)
             scan1 = us_dist(15)

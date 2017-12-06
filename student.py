@@ -238,6 +238,7 @@ class Piggy(pigo.Pigo):
                 print("Here is not safe enough, and turn back")
                 self.encB(25)    # turn back
                 self.restore_head()  # turn to the original direction
+                time.sleep(.5)
 
     def smooth_turn(self):
         self.right_rot()
