@@ -207,9 +207,11 @@ class Piggy(pigo.Pigo):
                 if abs(index - 90) < abs(ang - 90):
                     largest_dist = distance
                     ang = index
-
+        if largest_dist < 30:
+            self.encR(7)
+            return False
         print("I think the best angle is %d\n" % ang)
-        turn = int(7.3 * abs(ang - self.MIDPOINT) / 90)   ##calculate how much it should turn to the valid direction.
+        turn = int(7.5 * abs(ang - self.MIDPOINT) / 90)   ##calculate how much it should turn to the valid direction.
         if ang <= self.MIDPOINT:
             print("Turn right for %d\n" % turn)
             self. encR(turn)
