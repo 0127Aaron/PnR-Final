@@ -198,7 +198,7 @@ class Piggy(pigo.Pigo):
         """Then in order to serve nav method, it will print the ang with greatest distance"""
         ang = 0
         largest_dist = 0
-        self.wide_scan()
+        self.wide_scan(3)
         for index, distance in enumerate(self.scan):
             if distance > largest_dist:
                 largest_dist = distance
